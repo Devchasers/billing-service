@@ -18,11 +18,4 @@ public class BillingServiceApplication {
         SpringApplication.run(BillingServiceApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner commandLineRunner(InvoiceService invoiceService){
-        return args -> {
-            invoiceService.newInvoice(new InvoiceRequestDTO(new BigDecimal(8700),"1"));
-            invoiceService.newInvoice(new InvoiceRequestDTO(new BigDecimal(5400),"2"));
-        };
-    }
 }
